@@ -1,8 +1,8 @@
 {
   "name": "love-launcher",
   "main": "./lib/love-launcher",
-  "version": "0.1.0",
-  "description": "A short description of your package",
+  "version": "0.0.0",
+  "description": "Launch LÖVE 2D for the current project without having to leave Atom.",
   "activationEvents": ["love-launcher:launch"],
   "repository": "https://github.com/footballhead/love-launcher",
   "license": "MIT",
