@@ -1,0 +1,14 @@
+{
+  "name": "love-launcher",
+  "main": "./lib/love-launcher",
+  "version": "0.1.0",
+  "description": "A short description of your package",
+  "activationEvents": ["love-launcher:launch"],
+  "repository": "https://github.com/footballhead/love-launcher",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
