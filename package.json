@@ -1,7 +1,7 @@
 {
   "name": "love-launcher",
   "main": "./lib/love-launcher",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Launch LÖVE 2D for the current project without having to leave Atom.",
   "activationEvents": [
     "love-launcher:launch"
