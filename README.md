@@ -13,5 +13,8 @@ _Settings->Love Launcher_ and changing **Lovepath**; the default is
 LÖVE via a package manager then you can change **Lovepath** to simply be
 `love`.
 
+You can also change which options LÖVE launches with; go to
+_Settings->Love Launcher_ and change **Loveopts**.
+
 If something isn't working be sure to check the console; that's where debug
 info is dumped.
