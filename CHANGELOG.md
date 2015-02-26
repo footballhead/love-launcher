@@ -1,3 +1,10 @@
+## 0.5.0 - Remove deprecation and bugs
+* Changed over to new config API
+* Added titles and descriptions to `lovepath` and `loveopts`
+* Managed to greatly increase startup time >.>
+* Removed some bugs in the script (honestly how was it even working)
+* Warnings on no projects or more than one project
+
 ## 0.4.1 - Settings bug fix
 * Removed `activationEvents` from `package.json` to force settings to load
 
