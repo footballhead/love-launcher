@@ -1,3 +1,6 @@
+## 0.4.1 - Settings bug fix
+* Removed `activationEvents` from `package.json` to force settings to load
+
 ## 0.4.0 - Removing deprecations
 * Removed 2 deprecation warnings
 
