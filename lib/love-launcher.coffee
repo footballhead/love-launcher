@@ -1,7 +1,15 @@
 module.exports =
-  configDefaults:
-    lovepath: "C:\\Program Files (x86)\\LOVE\\love.exe"
-    loveopts: ""
+  config:
+    lovepath:
+      title: 'LÖVE PATH'
+      description: 'Path to LÖVE executable'
+      type: 'string'
+      default: 'C:\\Program Files (x86)\\LOVE\\love.exe'
+    loveopts:
+      title: 'LÖVE Options'
+      description: 'Additional command-line options to pass to LÖVE'
+      type: 'string'
+      default: ''
 
   activate: ( state ) ->
     atom.commands.add 'atom-text-editor',
