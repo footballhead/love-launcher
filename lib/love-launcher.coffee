@@ -11,19 +11,20 @@ module.exports =
       type: 'string'
       default: ''
 
-  activate: ( state ) ->
-    atom.commands.add 'atom-text-editor',
-      'love-launcher:launch': ( event ) ->
-          projroot = atom.project.getRootDirectory()
-          basedir = projroot.getRealPathSync()
-          lovepath = atom.config.get("love-launcher.lovepath")
-          loveopts = atom.config.get("love-launcher.loveopts")
+  activate: ->
+    atom.commands.add 'atom-text-editor', 'love-launcher:launch', => @launch()
 
-          {BufferedProcess} = require 'atom'
-          command = lovepath
-          args = [basedir, loveopts]
-          stdout = (output) -> console.log(output)
-          exit = (code) -> console.log("exited with #{code}")
+  launch: ->
+    projroot = atom.project.getRootDirectory()
+    basedir = projroot.getRealPathSync()
+    lovepath = atom.config.get("love-launcher.lovepath")
+    loveopts = atom.config.get("love-launcher.loveopts")
 
-          console.log("#{command} #{args}")
-          process = new BufferedProcess({command, args, stdout, exit})
+    {BufferedProcess} = require 'atom'
+    command = lovepath
+    args = [basedir, loveopts]
+    stdout = (output) -> console.log(output)
+    exit = (code) -> console.log("exited with #{code}")
+
+    console.log("#{command} #{args}")
+    process = new BufferedProcess({command, args, stdout, exit})
