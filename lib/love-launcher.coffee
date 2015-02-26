@@ -13,10 +13,20 @@ module.exports =
 
   activate: ->
     atom.commands.add 'atom-text-editor', 'love-launcher:launch', => @launch()
+    @warned = 0
 
   launch: ->
-    projroot = atom.project.getRootDirectory()
-    basedir = projroot.getRealPathSync()
+    projectPaths = atom.project.getPaths()
+
+    if projectPaths.length is 0
+      window.alert( "No projects open!" )
+      return
+
+    if projectPaths.length isnt 1 and @warned is 0
+      window.alert( "More than one project is open! Assuming the first one has main.lua.\n\nIf this is not the case please reorder your projects." )
+      @warned = 1
+
+    basedir = projectPaths[0]
     lovepath = atom.config.get("love-launcher.lovepath")
     loveopts = atom.config.get("love-launcher.loveopts")
 

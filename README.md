@@ -3,7 +3,7 @@
 
 Launches a [LÖVE](http://love2d.org/) process for the current project.
 
-A project must be open, and `main.lua` needs to be in the root.
+The project must be the first one open, and `main.lua` needs to be in the root.
 
 The command is **Love Launcher: Launch**; the keyboard shortcut is `Alt+L`.
 
