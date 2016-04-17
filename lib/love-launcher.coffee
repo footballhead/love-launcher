@@ -10,6 +10,11 @@ module.exports =
       description: 'Additional command-line options to pass to LÖVE'
       type: 'string'
       default: ''
+    lovemainpath:
+      title: 'main.lua subfolder'
+      description: 'Subfolder in the project containing the main.lua file'
+      type: 'string'
+      default: ''
 
   activate: ->
     atom.commands.add 'atom-text-editor', 'love-launcher:launch', => @launch()
@@ -26,7 +31,7 @@ module.exports =
       window.alert( "More than one project is open! Assuming the first one has main.lua.\n\nIf this is not the case please reorder your projects." )
       @warned = 1
 
-    basedir = projectPaths[0]
+    basedir = projectPaths[0] + "/" + atom.config.get("love-launcher.lovemainpath")
     lovepath = atom.config.get("love-launcher.lovepath")
     loveopts = atom.config.get("love-launcher.loveopts")
 
