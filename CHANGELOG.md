@@ -1,3 +1,7 @@
+## 0.6.0 - Minor additions
+* The currently active project is used instead of the first one loaded
+* added `lovemainpath` which says which subdirectory to look for `main.lua` in
+
 ## 0.5.0 - Remove deprecation and bugs
 * Changed over to new config API
 * Added titles and descriptions to `lovepath` and `loveopts`
