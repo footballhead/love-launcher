@@ -27,11 +27,14 @@ module.exports =
       window.alert( "No projects open!" )
       return
 
-    if projectPaths.length isnt 1 and @warned is 0
-      window.alert( "More than one project is open! Assuming the first one has main.lua.\n\nIf this is not the case please reorder your projects." )
-      @warned = 1
+    basedir = projectPaths[0]
 
-    basedir = projectPaths[0] + "/" + atom.config.get("love-launcher.lovemainpath")
+    currentFilePath = atom.workspace.getActivePaneItem()?.buffer?.file?.path
+    for projectPath in projectPaths
+      if currentFilePath?.slice(0, projectPath.length) == projectPath
+        basedir = projectPath
+
+    basedir += "/" + atom.config.get("love-launcher.lovemainpath")
     lovepath = atom.config.get("love-launcher.lovepath")
     loveopts = atom.config.get("love-launcher.loveopts")
 
