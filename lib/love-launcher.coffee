@@ -41,8 +41,9 @@ module.exports =
     {BufferedProcess} = require 'atom'
     command = lovepath
     args = [basedir, loveopts]
+    cwd = basedir
+    options = {cwd}
     stdout = (output) -> console.log(output)
     exit = (code) -> console.log("exited with #{code}")
-
     console.log("#{command} #{args}")
-    process = new BufferedProcess({command, args, stdout, exit})
+    process = new BufferedProcess({command, args, options, stdout, exit})
