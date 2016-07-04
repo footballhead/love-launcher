@@ -1,6 +1,9 @@
+## 0.6.1 Fixes!
+* Use base directory as current working directory (thanks SK83RJOSH)
+
 ## 0.6.0 - Minor additions
-* The currently active project is used instead of the first one loaded
-* added `lovemainpath` which says which subdirectory to look for `main.lua` in
+* The currently active project is used instead of the first one loaded (thanks premek)
+* added `lovemainpath` which says which subdirectory to look for `main.lua` in (thanks premek)
 
 ## 0.5.0 - Remove deprecation and bugs
 * Changed over to new config API
@@ -13,7 +16,7 @@
 * Removed `activationEvents` from `package.json` to force settings to load
 
 ## 0.4.0 - Removing deprecations
-* Removed 2 deprecation warnings
+* Removed 2 deprecation warnings (thanks iggyvolz)
 
 ## 0.3.0 - Loveopts
 * added loveopts for configuring what is passed to love
