@@ -21,6 +21,7 @@ module.exports =
     @warned = 0
 
   launch: ->
+    atom.workspace.saveAll()
     projectPaths = atom.project.getPaths()
 
     if projectPaths.length is 0
