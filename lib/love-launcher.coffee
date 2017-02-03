@@ -1,27 +1,14 @@
 module.exports =
-  config:
-    lovepath:
-      title: 'LÖVE PATH'
-      description: 'Path to LÖVE executable'
-      type: 'string'
-      default: 'C:\\Program Files (x86)\\LOVE\\love.exe'
-    loveopts:
-      title: 'LÖVE Options'
-      description: 'Additional command-line options to pass to LÖVE'
-      type: 'string'
-      default: ''
-    lovemainpath:
-      title: 'main.lua subfolder'
-      description: 'Subfolder in the project containing the main.lua file'
-      type: 'string'
-      default: ''
 
   activate: ->
-    atom.commands.add 'atom-text-editor', 'love-launcher:launch', => @launch()
+    atom.commands.add "atom-text-editor", "love-launcher:launch", => @launch()
     @warned = 0
 
   launch: ->
-    atom.workspace.saveAll()
+
+    if atom.config.get("love-launcher.saveonlaunch")
+      atom.workspace.saveAll()
+
     projectPaths = atom.project.getPaths()
 
     if projectPaths.length is 0
@@ -39,7 +26,7 @@ module.exports =
     lovepath = atom.config.get("love-launcher.lovepath")
     loveopts = atom.config.get("love-launcher.loveopts")
 
-    {BufferedProcess} = require 'atom'
+    {BufferedProcess} = require "atom"
     command = lovepath
     args = [basedir, loveopts]
     cwd = basedir
