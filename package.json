@@ -8,5 +8,31 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "configSchema": {
+    "lovepath": {
+      "title": "LÖVE PATH",
+      "description": "Path to LÖVE executable.",
+      "type": "string",
+      "default": "C:\\Program Files (x86)\\LOVE\\love.exe"
+    },
+    "loveopts": {
+      "title": "LÖVE Options",
+      "description": "Additional command-line options to pass to LÖVE.",
+      "type": "string",
+      "default": ""
+    },
+    "lovemainpath":{
+      "title": "LÖVE Main.lua Path",
+      "description": "Subfolder in the project containing the main.lua file.",
+      "type": "string",
+      "default": ""
+    },
+    "saveonlaunch": {
+      "title": "Save On Launch",
+      "description": "Automatically save all files opened before launching.",
+      "type": "boolean",
+      "default": false
+    }
+  }
 }
