@@ -1,7 +1,7 @@
 ## 0.7.0 - Save-in-launch and --console bugfix
 * Moved settings to package.json under `configSchema` (thanks ivcore)
 * Fix `--console` not working by using ChildProcess (thanks endlesstravel, Positive07, ivcore)
-* Launching LOVE now saves all files, togglable with `saveonlaunch` setting (thanks premek, ivcore)
+* Launching LÖVE now saves all files, togglable with `saveonlaunch` setting (thanks premek, ivcore)
 
 ## 0.6.3 - Fixes!
 * Use base directory as current working directory (thanks SK83RJOSH)
