@@ -1,7 +1,7 @@
 {
   "name": "love-launcher",
   "main": "./lib/love-launcher",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "description": "Launch LÖVE 2D for the current project without having to leave Atom.",
   "repository": "https://github.com/footballhead/love-launcher",
   "license": "MIT",
@@ -22,7 +22,7 @@
       "type": "string",
       "default": ""
     },
-    "lovemainpath":{
+    "lovemainpath": {
       "title": "LÖVE Main.lua Path",
       "description": "Subfolder in the project containing the main.lua file.",
       "type": "string",
