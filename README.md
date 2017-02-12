@@ -3,23 +3,46 @@
 
 Launches a [LÖVE](http://love2d.org/) process for the current project.
 
-The command is **Love Launcher: Launch**; the keyboard shortcut is `Alt+L`.
+Usage
+-------------------------------------------------------------------------------
 
-You can change which LÖVE process is spawned by going to
-_Settings->Love Launcher_ and changing **LÖVE PATH**; the default is
-`C:\Program Files (x86)\LOVE\love.exe`. If you're on Linux and have installed
-LÖVE via a package manager then you can change **LÖVE PATH** to simply be
-`love`.
+1. Open a Project Folder (_File > Open Folder_)
+2. Open a file (e.g. `main.lua`)
+3. Press **ALT + L**. Alternatively, open the Command Palette and find
+**Love Launcher: Launch**.
 
-You can also change which options LÖVE launches with; go to
-_Settings->Love Launcher_ and change **LÖVE Options**. For example, this is
-where you can specifiy `--console`.
+Settings
+-------------------------------------------------------------------------------
 
-If `main.lua` is not in the root of your project then you'll need to specifiy
-the subdirectory (relative to the root) in the **LÖVE Main.lua Path** setting.
+**LÖVE PATH**: The location of the LÖVE binary on disk. The default is
+`C:\Program Files (x86)\LOVE\love.exe`. This respects the `PATH` environment
+variable. That means that if you're on Linux and have installed LÖVE via a
+package manager then you can change **LÖVE PATH** to be `love`.
 
-If you wish to save all files on launch then check the **Save On Launch**
-setting. This is **off** by default.
+**LÖVE Options**: The command-line options given to the LÖVE process. For
+example, this is where you can specify `--console` on Windows to launch a
+debug console.
 
-If something isn't working be sure to check the console; that's where debug
-info is dumped. All bug reports are welcome!
+**LÖVE Main.lua Path**: The subdirectory of the current project that contains
+`main.lua`. If not set then it's assumed to be in the current project's root.
+
+**Save On Launch**: When on, all files will be saved when launching LÖVE. This
+is **off** by default.
+
+Debug/print() Output
+-------------------------------------------------------------------------------
+
+On Windows, add `--console` to the **LÖVE Options** setting. This will spawn a
+separate console window. Alternatively, in v0.10.2+, modify **LÖVE PATH** to
+run `lovec.exe` (instead of `love.exe`).
+
+On Linux, all `print()` statements will go to the Atom Developer Console
+(_View > Developer > Toggle Developer Tools_) **but only if the following is
+run** (e.g. in `love.load()`):
+
+```lua
+io.stdout:setvbuf("no")
+```
+
+If something goes wrong with LÖVE launcher the error will be in the Developer
+Console. All bug reports are welcome!
