@@ -5,7 +5,6 @@ module.exports =
     @warned = 0
 
   launch: ->
-
     atom.workspace.saveAll() if atom.config.get("love-launcher.saveonlaunch")
 
     projectPaths = atom.project.getPaths()
@@ -25,7 +24,9 @@ module.exports =
 
     command = lovepath
     args = [basedir, loveopts]
-    options = {detached: true, stdio: "inherit"}
+    options = {}
     console.log("command:#{command} args:#{args}")
     child = require("child_process")
     process = child.spawn(command, args, options)
+
+    process.stdout.on("data", (data) -> console.log(data.toString()))
