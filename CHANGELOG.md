@@ -1,4 +1,4 @@
-## 0.7.0 - Save-in-launch and --console bugfix
+## 0.7.0 - Save-on-launch and --console bugfix
 * Moved settings to package.json under `configSchema` (thanks ivcore)
 * Fix `--console` not working by using ChildProcess (thanks endlesstravel, Positive07, ivcore)
 * Launching LÖVE now saves all files, togglable with `saveonlaunch` setting (thanks premek, ivcore)
