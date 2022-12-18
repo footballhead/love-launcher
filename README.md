@@ -1,4 +1,10 @@
-﻿LÖVE Launcher
+﻿# This project is deprecated
+
+Given the sunset of [Atom], this project is no longer being mantained.
+
+[Atom]: https://github.blog/2022-06-08-sunsetting-atom/
+
+LÖVE Launcher
 ===============================================================================
 
 Launches a [LÖVE](http://love2d.org/) process for the current project.
