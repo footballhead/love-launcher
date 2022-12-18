@@ -1,6 +1,6 @@
 ﻿# This project is deprecated
 
-Given the sunset of [Atom], this project is no longer being mantained.
+Given the sunset of [Atom], this project is no longer being maintained.
 
 [Atom]: https://github.blog/2022-06-08-sunsetting-atom/
 
